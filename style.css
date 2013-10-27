@@ -1,0 +1,74 @@
+body
+{
+	background-image:url('background.jpg');
+}
+
+form
+{
+	margin-left : 30%;
+}
+input.text_input
+{
+	position : absolute;
+	left : 660px;
+	width : 180px;
+}
+input.submit_button
+{
+	position: relative;
+	left : 130px;
+	width : 100px;
+}
+.error
+{
+	position : absolute;
+	left : 860px;
+	color : #FF0000;
+}
+
+
+/* DIV ID = "CONTAINER" */
+#container
+{
+	margin : auto;
+	width : 70%;
+	background-color:#FFFFFF;
+	border-style : solid;
+	border-width : 10px;
+	border-color : #660000;
+	border-radius: 15px;
+}
+
+/* DIV ID = "HEADER" */
+#header
+{
+	clear:both;
+	color: #006600;
+	text-align:center;
+}
+#header h1
+{
+	font-size: 64px;
+	font-family : "Courier New", Courier, monospace;
+	font-weight: bold;
+}
+
+/* DIV ID = "CONTENT" */
+#content
+{
+	background-color : #EAEAEA;
+	clear:both;
+	margin-top : 20px;
+	margin-bottom : 20px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* DIV ID = "FOOTER" */
+#footer
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size : 12px;
+	text-align:center;
+	clear:both;
+	color: #006600;
+}
