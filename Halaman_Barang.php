@@ -7,34 +7,6 @@
 
 		<!-- Javascript -->
 		<script src="login.js"></script>
-		<script type="text/javascript">
-			function yHandler() {
-				var wrap = document.getElementById('wrap');
-				var contentHeight = wrap.offsetHeight;
-				var yOffset = window.pageYOffset;
-				var y = yOffset + window.innerHeight;
-				if(y >= contentHeight) {
-					
-					if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-						xmlhttp=new XMLHttpRequest();
-					} else {// code for IE6, IE5
-						xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-					}
-	
-					xmlhttp.onreadystatechange=function() {
-						if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-							var str = xmlhttp.responseText;
-							wrap.innerHTML += str;
-						}
-					}
-					xmlhttp.open("GET","item_loader.php?c="+<?php echo $category; ?>,true);
-					xmlhttp.send();
-				}
-				var status = document.getElementById('status');
-				status.innerHTML = contentHeight + " | " + y;
-			}
-			window.onscroll = yHandler;
-		</script>
 		
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="daftar_barang.css">
@@ -50,7 +22,7 @@
 		</div>
 
 		<div id="title">
-			Showing result(s) for : "<?php $category = 'Mie Instant'; echo $category; ?>"
+			Showing result(s) for : "<?php $max = $_GET["max"]; $category = $_GET["cat"]; echo $category; ?>"
 		</div>
 
 		<div id="head-right">
@@ -106,7 +78,7 @@
 			
 			$result = mysqli_query($con, "SELECT * FROM barang WHERE kategori = '" . $category ."'");
 			
-			for($i = 0; $i < 10 && $nama = mysqli_fetch_array($result); $i++) {
+			for($i = 0; $i < $max && $nama = mysqli_fetch_array($result); $i++) {
 				
 				echo '<div style="padding-top:200px">
 						<div style="text-align:center">
@@ -125,9 +97,7 @@
 			mysqli_close($con);
 			?>
 			</div>
-			<div id="status">0 | 0</div>
+			<a href="halaman_barang.php?max=<?php echo $max+=10;?>&cat=<?php echo $category;?>">show more</a>
 		</section>
-		<br><br>
-		
 	</body>
 </html>
