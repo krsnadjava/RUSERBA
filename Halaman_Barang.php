@@ -7,35 +7,32 @@
 
 		<!-- Javascript -->
 		<script src="daftar_barang.js"></script>
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="daftar_barang.css">
 	</head>
 
 	<body>
 		<!-- Header page -->
 		<header>
-		<div id="icon" style="float:left; padding-left:15px; padding-right:15px;
-		padding-top:5px; padding-bottom:5px; background-color:#FF0000">
+		<div id="icon">
 			<a href="Home.html">
 				<img src="Ruserba-icon1.png" alt="Ruserba Homepage" width="160" height="160">
 			</a>
 		</div>
 
-		<div id="title" style="width:790px; height:115px; font-family:Roboto;
-		font-size:40px; color:white; float:left;
-		padding-top:60px; padding-left:40px; padding-right:40px;
-		margin-left:2px; background-color:#FF0000">
+		<div id="title">
 			Showing result(s) for : "<?php $max = $_GET["asd"];$category = 'Mie Instant'; echo $category; ?>"
 		</div>
 
-		<div id="head-right" style="width:18%; height:155px; float:left;
-		font-family:Roboto; color:white; padding-right:5px; padding-top:20px;
-		padding-left:10px; background-color:#FF0000">
+		<div id="head-right">
 			<div>
 				<a href="Cart.php">Go to Cart</a>
-				<div id="login" style="float: right; text-align:right">
+				<div id="login">
 					<a href="Login.php">Login</a><br>
 					<a href="Register.php">Register</a>
 				</div>
-				<div id="logout" style="float: right; text-align:right; display:none">
+				<div id="logout">
 					<a onclick="logout()" href="Halaman Barang.php">Logout</a><br>
 					<a href="Profile.php"><?php $username = "Krisna Fathurahman"; echo $username; ?></a>
 				</div>
@@ -44,7 +41,7 @@
 			<!-- kasih jarak ke bawah, MANUAL ^^ -->
 			<br><br><br>
 	
-			<div style="padding-left:40px">
+			<div id="search-tab">
 				<form action="Search Item.php" method="post">
 					<input type="text" name="search">
 					<input type="submit" value="Search">
@@ -82,9 +79,6 @@
 		?>
 		</section>
 		<br><br>
-		<?php
-			$max+=10;
-			echo'<a href="halaman_barang.php?asd=' . $max . '">Show More</a>';
-		?>
+		
 	</body>
 </html>
