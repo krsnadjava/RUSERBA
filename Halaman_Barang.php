@@ -23,7 +23,7 @@
 		font-size:40px; color:white; float:left;
 		padding-top:60px; padding-left:40px; padding-right:40px;
 		margin-left:2px; background-color:#FF0000">
-			Showing result(s) for : "<?php $category = 'Mie Instant'; echo $category; ?>"
+			Showing result(s) for : "<?php $max = $_GET["asd"];$category = 'Mie Instant'; echo $category; ?>"
 		</div>
 
 		<div id="head-right" style="width:18%; height:155px; float:left;
@@ -62,26 +62,29 @@
 			
 			$result = mysqli_query($con, "SELECT * FROM barang WHERE kategori = '" . $category ."'");
 			
-			/*while($nama = mysqli_fetch_array($result)){
-				echo '<img src="' . $nama['image'] . '" width="300" height="300">';
-				echo $nama['nama_barang'];
-				echo '<br>';
-			}*/
-			
-			for($i = 0; $i < 15 && $nama = mysqli_fetch_array($result); $i++) {
+			for($i = 0; $i < $max && $nama = mysqli_fetch_array($result); $i++) {
 				
 				echo '<div style="padding-top:200px">
 						<div style="text-align:center">
 							<img src="'. $nama['image'] . '" width="300" height="300">
 							<div>
-								' . $nama['nama_barang'] . '<br>Rp ' . $nama['harga'] . ',-
+								<a href="detail.php?name=' . $nama['nama_barang'] . '">' . $nama['nama_barang'] . '</a><br>Rp ' . $nama['harga'] . ',-
+								<form>
+									Jumlah :
+									<input type="number" size="4" name="sum">
+									<input type="submit" value="Buy">
+								</form>
 							</div>
 						</div>
-					</div>';  
+					</div>';
 			}
 			mysqli_close($con);
 		?>
-		
 		</section>
+		<br><br>
+		<?php
+			$max+=10;
+			echo'<a href="halaman_barang.php?asd=' . $max . '">Show More</a>';
+		?>
 	</body>
 </html>
