@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<!-- judul tab nya, wajib ini -->
-		<title>Halaman Barang</title>
+		<title>Search Result(s)</title>
 
 		<!-- Javascript -->
 		<script src="daftar_barang.js"></script>
@@ -22,7 +22,7 @@
 		</div>
 
 		<div id="title">
-			Showing result(s) for : "<?php $max = $_GET["asd"];$category = 'Mie Instant'; echo $category; ?>"
+			Showing result(s) for : "<?php $search = $_POST["search"]; echo $search; ?>"
 		</div>
 
 		<div id="head-right">
@@ -57,9 +57,9 @@
 				echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			}
 			
-			$result = mysqli_query($con, "SELECT * FROM barang WHERE kategori = '" . $category ."'");
+			$result = mysqli_query($con, "SELECT * FROM barang WHERE nama_barang LIKE '%" . $search ."%'");
 			
-			for($i = 0; $i < $max && $nama = mysqli_fetch_array($result); $i++) {
+			for($i = 0; $i < 10 && $nama = mysqli_fetch_array($result); $i++) {
 				
 				echo '<div style="padding-top:200px">
 						<div style="text-align:center">
