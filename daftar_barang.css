@@ -46,10 +46,17 @@
 {
 	float: right;
 	text-align:right;
-	display:none;
 }
 
 #search-tab
 {
 	padding-left:40px;
 }
+
+#wrap
+{
+width:800px;
+margin:0px auto;
+}
+
+#status{font-size:24px;}
