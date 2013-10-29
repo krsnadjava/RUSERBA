@@ -40,7 +40,6 @@
 						<a href="logout.php">Logout</a><br>
 						Welcome <a href="Profile.php?user=' . $_COOKIE["user"] . '">' . $user['nama_lengkap'] . '</a>
 					</div>';
-				
 					
 					mysqli_close($conn);
 				}
@@ -74,11 +73,13 @@
 						<div style="text-align:center">
 							<img src="'. $barang['image'] . '" width="300" height="300">
 							<div>
-								' . $barang['nama_barang'] . '<br>Rp ' . $barang['harga'] . ',-
+								<b>' . $barang['nama_barang'] . '</b><br>Rp ' . $barang['harga'] . ',-
 								<br>Sisa stok : ' . $barang['total_stok'] . '
+								<br><b>Keterangan : </b>
+								<br>' . $barang['keterangan'] . '
 							</div>
 						</div>
-					</div>';
+					</div><br><br><br><br>';
 		
 		mysqli_close($con);
 	?>

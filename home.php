@@ -50,11 +50,11 @@
 		<div id="navcontainer">
 			<ul id="navlist">
 				
-				<li id="active"><a href="Halaman_Barang.php" id="current">Beras</a></li>
-				<li><a href="Halaman_Barang.php">Mie Instant</a></li>
-				<li><a href="Halaman_Barang.php">Daging</a></li>
-				<li><a href="Halaman_Barang.php">Kecap</a></li>
-				<li><a href="Halaman_Barang.php">Sayuran dan Buah</a></li>
+				<li id="active"><a href="Halaman_Barang.php?max=10&cat=Beras" id="current">Beras</a></li>
+				<li><a href="Halaman_Barang.php?max=10&cat=Mie Instant">Mie Instant</a></li>
+				<li><a href="Halaman_Barang.php?max=10&cat=Daging">Daging</a></li>
+				<li><a href="Halaman_Barang.php?max=10&cat=Kecap">Kecap</a></li>
+				<li><a href="Halaman_Barang.php?max=10&cat=Sayuran dan Buah">Sayuran dan Buah</a></li>
 			</ul>
 		</div>
 				
