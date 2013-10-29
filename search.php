@@ -28,14 +28,31 @@
 		<div id="head-right">
 			<div>
 				<a href="Cart.php">Go to Cart</a>
-				<div id="login">
-					<a href="Login.php">Login</a><br>
-					<a href="registrasi_user.php">Register</a>
-				</div>
-				<div id="logout">
-					<a onclick="logout()" href="Halaman Barang.php">Logout</a><br>
-					<a href="Profile.php"><?php $username = "Krisna Fathurahman"; echo $username; ?></a>
-				</div>
+				<?php
+				if(!isset($_COOKIE["user"]))
+				{
+					echo '<div id="login">
+						<a href="login.php">Login</a><br>
+						<a href="registrasi_user.php">Register</a>
+					</div>';
+				} else {
+					$conn = mysqli_connect("localhost","root","","ruserba");
+					if(mysqli_connect_errno($conn)) {
+						echo "Failed to connect to MySQL: " . mysqli_connect_error();
+					}
+			
+					$hasil = mysqli_query($conn, "SELECT * FROM user_table WHERE username = '" . $_COOKIE["user"] ."'");
+					
+					$user = mysqli_fetch_array($hasil);
+					
+					echo '<div id="logout">
+						<a href="logout.php">Logout</a><br>
+						Welcome <a href="Profile.php?user=' . $_COOKIE["user"] . '">' . $user['nama_lengkap'] . '</a>
+					</div>';
+					
+					mysqli_close($conn);
+				}
+				?>
 			</div>
 	
 			<!-- kasih jarak ke bawah, MANUAL ^^ -->
