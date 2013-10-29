@@ -32,6 +32,7 @@ function checkUsername(str)
 }
 */
 
+
 setInterval(function()
 { 
 	var usernameErr = '';
