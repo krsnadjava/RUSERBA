@@ -3,6 +3,11 @@
 <head>
 <link rel="stylesheet" type="text/css" href="layout.css">
 <title>Your Cart</title>
+<script>
+function onBuy(){
+	document.location.href = "home.php";
+}
+</script>
 </head>
 
 <body>
@@ -49,10 +54,10 @@
 		<ul id="navlist">
 			
 			<li id="active"><a href="Halaman_Barang.php" id="current">Beras</a></li>
-			<li><a href="Halaman_Barang.php">Mie</a></li>
+			<li><a href="Halaman_Barang.php">Mie Instant</a></li>
 			<li><a href="Halaman_Barang.php">Daging</a></li>
 			<li><a href="Halaman_Barang.php">Kecap</a></li>
-			<li><a href="Halaman_Barang.php">Motor</a></li>
+			<li><a href="Halaman_Barang.php">Sayuran dan Buah</a></li>
 		</ul>
 	</div>
 			
@@ -74,15 +79,33 @@
 
 			while($row = mysqli_fetch_array($result))
 			{
-				echo $row['nama_barang'] . " - " . $row['jumlah'];
+				echo $row['nama_barang'] . " ------- " . $row['jumlah'];
 				echo "<br>";
 			}
 
 			mysqli_close($con);
 		?> 
 		<hr noshade size=7>
-		Total harga : </br>
-		<input type="submit" value="Buy">
+		Total harga :
+		<div id="float-right">
+			<button type="button" value="Buy" onclick=onBuy()>Buy</button>
+		</div>
+		<div id="float-right">
+		<?php
+			$con=mysqli_connect("localhost","root","","cart");
+			// Check connection
+			if (mysqli_connect_errno())
+			{
+				echo "Failed to connect to MySQL: " . mysqli_connect_error();
+			}
+
+			$result = mysqli_query($con,"SELECT * FROM list_barang_table");
+			$row = mysqli_fetch_array($result);
+			echo "Rp. ".$row['jumlah'];
+			mysqli_close($con);
+		?>
+		</div>
+		
 	</div>
 	<div id="footer">
 		<p><b>Copyright © Krisna Fathurahman, Mochammad Dikra Prasetya, Bima Laksmana</b></p>

@@ -51,10 +51,10 @@
 			<ul id="navlist">
 				
 				<li id="active"><a href="Halaman_Barang.php" id="current">Beras</a></li>
-				<li><a href="Halaman_Barang.php">Mie</a></li>
+				<li><a href="Halaman_Barang.php">Mie Instant</a></li>
 				<li><a href="Halaman_Barang.php">Daging</a></li>
 				<li><a href="Halaman_Barang.php">Kecap</a></li>
-				<li><a href="Halaman_Barang.php">Motor</a></li>
+				<li><a href="Halaman_Barang.php">Sayuran dan Buah</a></li>
 			</ul>
 		</div>
 				
