@@ -41,7 +41,7 @@
 			<br><br><br>
 	
 			<div style="padding-left:40px">
-				<form action="Search Item.php" method="post">
+				<form action="search.php" method="post">
 					<input type="text" name="search">
 					<input type="submit" value="Search">
 				</form>
