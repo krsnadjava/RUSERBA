@@ -42,5 +42,5 @@ function signout() {
 }
 
 function redirect() {
-	timer = setTimeout(window.location='halaman_barang.php?asd=10',1500);
+	timer = setTimeout(window.location='home.php',1500);
 }
