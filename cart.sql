@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2013 at 10:05 AM
+-- Generation Time: Oct 29, 2013 at 10:33 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.3
 
@@ -40,7 +40,9 @@ CREATE TABLE IF NOT EXISTS `list_barang_table` (
 --
 
 INSERT INTO `list_barang_table` (`nama_barang`, `jumlah`) VALUES
-('beras cap kapak', 5);
+('beras cap kapak', 5),
+('mie indomie', 8),
+('motor harley davidson', 10);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
