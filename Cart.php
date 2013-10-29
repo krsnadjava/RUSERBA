@@ -68,7 +68,7 @@ function onBuy(){
 	
 		ITEM ANDA :</br>
 		<?php
-			$con=mysqli_connect("localhost","root","","cart");
+			$con=mysqli_connect("localhost","root","","ruserba");
 			// Check connection
 			if (mysqli_connect_errno())
 			{
@@ -92,7 +92,7 @@ function onBuy(){
 		</div>
 		<div id="float-right">
 		<?php
-			$con=mysqli_connect("localhost","root","","cart");
+			$con=mysqli_connect("localhost","root","","ruserba");
 			// Check connection
 			if (mysqli_connect_errno())
 			{
@@ -100,8 +100,14 @@ function onBuy(){
 			}
 
 			$result = mysqli_query($con,"SELECT * FROM list_barang_table");
-			$row = mysqli_fetch_array($result);
-			echo "Rp. ".$row['jumlah'];
+			
+			$total = 0;
+			while($row = mysqli_fetch_array($result))
+			{
+				$harga_barang = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM barang WHERE nama_barang='".$row['nama_barang']."'"));
+				$total += $harga_barang['harga'] * $row['jumlah'];
+			}
+			echo "Rp. ".$total;
 			mysqli_close($con);
 		?>
 		</div>

@@ -85,7 +85,7 @@
 							<img src="'. $nama['image'] . '" width="300" height="300">
 							<div>
 								<a href="detail.php?name=' . $nama['nama_barang'] . '">' . $nama['nama_barang'] . '</a><br>Rp ' . $nama['harga'] . ',-
-								<form>
+								<form action="buy()">
 									Jumlah :
 									<input type="number" size="4" name="sum">
 									<input type="submit" value="Buy">
